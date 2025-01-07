@@ -64,3 +64,9 @@ new BurgerMenu().init();
 // 	defaultOpen: [], // [0,1]
 // 	collapsedClass: 'open',
 // });
+
+const burgerButton = document.querySelector('.js-button')
+
+burgerButton.onclick = () => {
+    
+}
