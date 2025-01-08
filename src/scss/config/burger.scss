@@ -1,0 +1,80 @@
+@use "../config/functions" as *;
+@use "../config/mixins" as *;
+@use "../config/vars" as global;
+
+.burger-checkbox {
+    display: none;
+    @include m-phone {
+        position: absolute;
+        visibility: hidden;
+    }
+  }
+  
+  .burger {
+    display: none;
+    @include m-tablet-wide {
+        cursor: pointer;
+        display: block;
+        position: relative;
+        border: none;
+        width: 46px;
+        height: 46px;
+        z-index: 10;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 5px;
+        &:active{
+          background-color: rgba(255, 255, 255, 0.15);
+        }
+    }
+  }
+  
+  .burger::before,
+  .burger::after {
+    @include m-tablet-wide {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 28px;
+        height: 2px;
+        background: #ffffff;
+        right: 9px;
+        top: 10px;
+    }
+  }
+  
+  .burger::before {
+    @include m-tablet-wide {
+        top: 14px;
+        width: 23px;
+        box-shadow: 0 9px 0 #fff;
+        transition: box-shadow 0.3s 0.15s, top 0.3s 0.15s, transform 0.3s;
+    }
+  }
+  
+  .burger::after {
+    @include m-tablet-wide {
+        top: 32px;
+        width: 17px;
+        transition: bottom 0.3s 0.15s, transform 0.3s;
+    }
+  }
+  
+  .burger-checkbox:checked + .burger::before {
+    @include m-tablet-wide {
+        width: 28px;
+        top: 20px;
+        transform: rotate(45deg);
+        box-shadow: 0 6px 0 rgba(0, 0, 0, 0);
+        transition: box-shadow 0.15s, top 0.3s, transform 0.3s 0.15s;
+    }
+  }
+  
+  .burger-checkbox:checked + .burger::after {
+    @include m-tablet-wide {
+        width: 28px;
+        top: 20px;
+        transform: rotate(-45deg);
+        transition: bottom 0.3s, transform 0.3s 0.15s;
+    }
+  }
+  

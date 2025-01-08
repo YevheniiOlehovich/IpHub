@@ -23,4 +23,6 @@
 // Подключение стилей отдельных блоков и секций
 @use "components/header";
 
+@use "config/burger.scss";
+
 @use "components/footer";

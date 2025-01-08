@@ -66,7 +66,10 @@ new BurgerMenu().init();
 // });
 
 const burgerButton = document.querySelector('.js-button')
+const dropMenu = document.querySelector('.js-menu')
+
+
 
 burgerButton.onclick = () => {
-    
+    dropMenu.classList.toggle('menu-show')
 }

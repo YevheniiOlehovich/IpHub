@@ -47,21 +47,22 @@
 	flex-direction: column;
 }
 
-// .page {
-// 	position: relative;
-// 	flex: 1 1 auto;
+.color-orange{
+	color: #DA4533;
+}
 
-// 	[data-observ] {
-// 		pointer-events: none;
-// 		position: absolute;
-// 		inset-block-start: 0;
-// 		inset-inline-start: 0;
-// 		block-size: rem(2);
-// 		inline-size: 100%;
-// 		background: transparent;
-// 	}
+.color-black{
+	color: #1B1B1B
+}
 
-// 	&_start {
-// 		padding-block-start: rem(global.$header-height);
-// 	}
-// }
+.color-grey{
+	color: #8A8A8A;
+}
+
+.color-white{
+	color: #F9F9F9;
+}
+
+.block{
+	display: block;
+}

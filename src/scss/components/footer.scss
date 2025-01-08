@@ -2,5 +2,224 @@
 @use "../config/mixins" as *;
 
 .footer {
-	
+	position: relative;
+    width: 100%;
+    height: 560px;
+    padding: 0 352px;
+
+    @include m-desktop-small{
+        padding: 0 250px;
+    }
+    @include m-tablet{
+        padding: 0 200px;
+        height: 480px;
+    }
+    @include m-tablet-wide{
+        padding: 0 20px;
+        height: 520px;
+    }
+    @include m-phone{
+        height: 740px;
+    }
+    &__bg{
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        z-index: 1;
+        height: 560px;
+        @include m-tablet{
+            height: 520px;
+        }
+        @include m-phone{
+            height: 740px;
+        }
+        &-pic{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 2;
+        }
+    }
+    &__container{
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 100px 0 50px;
+        @include m-laptop{
+            padding: 60px 0 40px;
+        }
+        @include m-phone{
+            padding: 60px 0 30px;
+        }
+    }
+    &__head{
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-bottom: 50px;
+        @include m-laptop{
+            padding-bottom: 35px;
+        }
+        @include m-phone{
+            flex-direction: column;
+        }
+        &::after{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px; /* Висота бордера */
+            background: linear-gradient(to right, grey, rgba(128, 128, 128, 0.1));
+        }
+    }
+    &__logo{
+        display: block;
+        width: 210px;
+        height: 48px;
+        margin-right: 20px;
+        @include m-phone{
+            margin-bottom: 12px;
+        }
+        &-pic{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    &__info{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        @include m-tablet{
+            flex-direction: column;
+        }
+        &-description{
+            margin-top: 4px;
+            display: block;
+            max-width: 400px;
+            @include m-tablet{
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+            @include m-phone{
+                margin-top: 0;
+            }
+        }
+        &-location{
+            display: block;
+            margin-bottom: 12px;
+        }
+        &-block{
+            width: 300px;
+        }
+    }
+    &__texts{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__block{
+        display: flex;
+        
+    }
+    &__middle{
+        padding-top: 50px;
+        display: flex;
+        justify-content: space-between;
+        @include m-laptop{
+            padding-top: 35px;
+        }
+        @include m-phone{
+            flex-wrap: wrap;
+        }
+    }
+    &__list{
+        &-title{
+            margin-bottom: 20px;
+        }
+        &-item:not(:last-child){
+            margin-bottom: 15px;
+        }
+        &-row{
+            @include m-phone{
+                display: flex;
+                flex-direction: row;
+            }
+        }
+    }
+    &__bottom{
+        padding-top: 50px; 
+        display: flex;
+        justify-content: space-between;
+        @include m-laptop{
+            padding-top: 40px;
+        }
+        @include m-phone{
+            flex-direction: column;
+            padding-top: 35px;
+        }
+    }
+};
+
+.column{
+    flex-direction: column;
+}
+
+.footer-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 23.1px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.footer__title{
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 28.8px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    
+}
+
+.footer-text-link{
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25.6px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+
+.hidden-list{
+    @include m-tablet{
+        display: none;
+    }
+}
+
+.last-list{
+    @include m-phone{
+        width: 100%;
+        margin-top: 30px;
+    }
+}
+
+.marginfix{
+    @include m-phone{
+        margin-bottom: 0!important;
+        margin-right: 20px;
+    }
 }
