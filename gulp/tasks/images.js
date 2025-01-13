@@ -7,7 +7,7 @@ import { filePaths } from '../config/paths.js';
 import { logger } from '../config/logger.js';
 
 export const images = (isBuild, serverInstance) => {
-	return gulp.src(filePaths.src.images)
+	return gulp.src(filePaths.src.images, { encoding: false })
 		.pipe(logger.handleError('IMAGES'))
 		.pipe(plugins.newer(filePaths.build.images))
 		.pipe(plugins.if(isBuild, webp()))
@@ -21,7 +21,7 @@ export const images = (isBuild, serverInstance) => {
 					progressive: true,
 					svgoPlugins: [{ removeViewBox: false }],
 					interlaced: true,
-					optimizationLevel: 7, // 0 to 7
+					optimizationLevel: 3, // 0 to 7
 				}),
 			),
 		)
@@ -30,3 +30,7 @@ export const images = (isBuild, serverInstance) => {
 		.pipe(gulp.dest(filePaths.build.images))
 		.pipe(serverInstance.stream());
 };
+
+
+
+

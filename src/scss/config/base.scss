@@ -66,3 +66,24 @@
 .block{
 	display: block;
 }
+
+.section{
+	position: relative;
+	width: 100%;
+}
+
+.container{
+	position: relative;
+	width: 100%;
+	padding: 0 352px;
+	@include m-desktop-small{
+        padding: 0 250px;
+    }
+    @include m-tablet{
+        padding: 0 200px;
+    }
+    @include m-tablet-wide{
+        padding: 0 20px;
+        
+    }
+}
