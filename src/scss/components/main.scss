@@ -1,0 +1,238 @@
+@use "../config/functions" as *;
+@use "../config/mixins" as *;
+
+.main {
+	position: relative;
+    width: 100%;
+    &__bg{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        z-index: 1;
+        height: 100%;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            z-index: 0;
+        }
+        &-pic{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.2;
+            z-index: 1;
+        }
+    }
+    &__content{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 100px 0;
+        z-index: 2;
+        width: 100%;
+        flex-direction: column;
+    }
+    &__container{
+        display: flex;
+        justify-content: space-between;
+    }
+    &__info{
+        max-width: 450px;
+        &-subtitle{
+            margin-bottom: 8px;
+        }
+        &-title{
+            margin-bottom: 16px;
+            position: relative;
+            display: block;
+            
+        }
+        &-text{
+            display: block;
+            margin-bottom: 32px;
+        }
+        &-btns{
+            display: flex;
+            align-items: center;
+            
+        }
+        &-btn{
+            &:not(:last-child){
+                margin-right: 36px;
+            }
+        }
+
+    }
+    &__decor{
+        position: relative;
+        z-index: 2;
+        width: 544px;
+        height: 514px;
+        transform: translateY(-65px);        
+
+        &-vector{
+            position: absolute;
+            left: 30px;
+            bottom: 55px;
+            z-index: 3;
+            width: 514px;
+            height: 323px;
+        }
+        &-pic {
+            position: absolute;
+            object-fit: cover;
+            z-index: 4;
+            width: 514px;
+            height: 513px;
+            right: 0;
+            top: 0;
+        }
+        
+    }
+    &__expirience{
+        position: relative;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        &-decor{
+            position: relative;
+            width: 400px;
+            height: 430px
+        }
+        &-vector{
+            position: absolute;
+            bottom: 0;
+            right: 18px;
+            z-index: 2;
+            width: 344px;
+            height: 344px;
+        }
+        &-pic{
+            width: 396px;
+            height: 396px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
+        }
+        &-content{
+            width: 800px;
+            display: flex;
+            flex-direction: column;
+        }
+        &-block{}
+        &-title{
+            margin-bottom: 16px;
+        }
+        &-subtitle{
+            margin-bottom: 50px;
+        }
+        &-field{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        &-item{
+            padding: 20px;
+            position: relative;
+            border: 1px solid transparent;
+            &::before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 1px; /* товщина бордера */
+                background: linear-gradient(to right, rgba(218, 69, 51, 1), rgba(218, 69, 51, 0));
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 1px; /* товщина бордера */
+                background: linear-gradient(to right, rgba(218, 69, 51, 1), rgba(218, 69, 51, 0));
+            }
+            &:hover{
+                border: 1px solid rgba(218, 69, 51, 1);
+            }
+        }
+        &-itemTitle{
+            margin-bottom: 5px;
+        }
+        &-itemSubtitle{
+            max-width: 290px;
+        }
+        &-logoItem{
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        &-logoItemShadow{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            background-color: rgba(0, 0, 0, 0.4);
+            transition: 0.4s ease-in-out;
+            &:hover{
+                transform: translateY(-100%);
+            }
+        }
+        &-logoItemPic{
+            position: relative;
+            z-index: 1;
+            width: 270px;
+            height: 100px;
+        }
+        &-logoItemIco{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+};
+
+
+.open-decor{
+    position: absolute;
+    top: 0;
+    left: -20px;
+    transform: scaleX(-1);
+}
+
+.item-title{
+    font-family: STIX Two Text;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 45px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.item-subtitle{
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.6px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+
+}

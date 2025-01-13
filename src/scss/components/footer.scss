@@ -29,6 +29,16 @@
         width: 100vw;
         z-index: 1;
         height: 560px;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            z-index: 0;
+        }
         @include m-tablet{
             height: 520px;
         }
@@ -36,10 +46,14 @@
             height: 740px;
         }
         &-pic{
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: 2;
+            opacity: 0.2;
+            z-index: 1;
         }
     }
     &__container{

@@ -87,3 +87,125 @@
         
     }
 }
+
+.main-title{
+	font-family: STIX Two Text;
+	font-size: 55px;
+	font-weight: 500;
+	line-height: 74.25px;
+	text-align: left;
+	text-underline-position: from-font;
+	text-decoration-skip-ink: none;
+}
+
+.section-title{
+	
+	font-family: STIX Two Text;
+	font-size: 38px;
+	font-weight: 400;
+	line-height: 51.3px;
+	text-align: left;
+	text-underline-position: from-font;
+	text-decoration-skip-ink: none;
+
+}
+
+.section-text{
+	font-family: Montserrat;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 25.6px;
+	text-align: left;
+	text-underline-position: from-font;
+	text-decoration-skip-ink: none;
+
+}
+
+.section-subtitle{
+	font-family: Montserrat;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 25.6px;
+	text-align: left;
+	text-underline-position: from-font;
+	text-decoration-skip-ink: none;
+
+}
+
+.big-btn{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 24px;
+	border: 1px solid #DA4533;
+	border-radius: 50%;
+
+	color: #DA4533;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 25.6px;
+	text-align: center;
+	text-underline-position: from-font;
+	text-decoration-skip-ink: none;
+
+	transition: 0.4s ease-in-out;
+	width: 300px;
+	height: 100px;
+	&:hover{
+		background-color: #DA4533;
+		color: white;
+		border: 1px solid black;
+	}
+}
+
+
+
+.small-btn{
+	position: relative;
+	width: 135px;
+	height: 40px;
+	padding: 10px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	
+	border: 1px solid #DA4533;
+	border-radius: 50%;
+
+	color: #DA4533;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 25.6px;
+	
+	text-underline-position: from-font;
+	text-decoration-skip-ink: none;
+
+	transition: 0.4s ease-in-out;
+	&::after{
+		content: '→';
+			visibility: hidden;
+			position: absolute;
+			right: -70px;
+			width: 100px;
+			font-size: 50px;
+			transition: 0.4s ease-in-out;
+	}
+	&:hover{	
+		overflow: visible;
+		padding: 10px 25px 10px 10px;
+		&::after{
+			content: '→';
+			visibility: visible;
+			position: absolute;
+			right: -50px;
+			width: 100px;
+			font-size: 50px;
+		}
+	}
+	
+}
