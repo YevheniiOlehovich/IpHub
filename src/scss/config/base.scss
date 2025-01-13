@@ -96,10 +96,19 @@
 	text-align: left;
 	text-underline-position: from-font;
 	text-decoration-skip-ink: none;
+	@include m-desktop-small{
+		font-size: 48px;
+		font-weight: 500;
+		line-height: 64.8px;
+	}
+	@include m-tablet{
+		font-size: 44px;
+		font-weight: 500;
+		line-height: 59.4px;
+	}
 }
 
 .section-title{
-	
 	font-family: STIX Two Text;
 	font-size: 38px;
 	font-weight: 400;
@@ -107,6 +116,11 @@
 	text-align: left;
 	text-underline-position: from-font;
 	text-decoration-skip-ink: none;
+	@include m-tablet{
+		font-size: 32px;
+		font-weight: 400;
+		line-height: 43.2px;
+	}
 
 }
 
@@ -118,6 +132,17 @@
 	text-align: left;
 	text-underline-position: from-font;
 	text-decoration-skip-ink: none;
+	@include m-desktop-small{
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 25.6px;
+	}
+	@include m-tablet{
+		font-family: Montserrat;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 25.6px;
+	}
 
 }
 
