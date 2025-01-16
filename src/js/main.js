@@ -8,7 +8,7 @@
  */
 // import { MousePRLX } from './libs/parallaxMouse'
 // import AOS from 'aos'
-// import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation, Pagination } from 'swiper';
 
 import { BaseHelpers } from './helpers/base-helpers';
 import { PopupManager } from './modules/popup-manager';
@@ -68,8 +68,44 @@ new BurgerMenu().init();
 const burgerButton = document.querySelector('.js-button')
 const dropMenu = document.querySelector('.js-menu')
 
-
-
 burgerButton.onclick = () => {
     dropMenu.classList.toggle('menu-show')
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const swiper = new Swiper('.js-solutions-swiper', {
+        modules: [Navigation], 
+        loop: true, 
+        
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        spaceBetween: 20,  
+
+        breakpoints: {
+
+            360: {
+                slidesPerView: 1
+            },
+            480: {
+                slidesPerView: 2, 
+                spaceBetween: 10, 
+            },
+            768: {
+                slidesPerView: 3, 
+                spaceBetween: 15,
+            },
+
+            1024: {
+                slidesPerView: 3, 
+                spaceBetween: 20,
+            },
+            1440: {
+                slidesPerView: 4, 
+                spaceBetween: 20,
+            }
+        },
+    });
+});

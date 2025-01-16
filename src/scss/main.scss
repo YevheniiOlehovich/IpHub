@@ -9,7 +9,7 @@
 
 // Библиотеки, раскомментировать для использования
 // @use 'libs/aos';
-// @use 'libs/swiper';
+@use 'libs/swiper';
 
 // Подключение custom scrollbar для всего сайта
 @use "config/scrollbar";
@@ -26,5 +26,6 @@
 @use "config/burger.scss";
 
 @use "components/main.scss";
+@use "components/solutions.scss";
 
 @use "components/footer";
