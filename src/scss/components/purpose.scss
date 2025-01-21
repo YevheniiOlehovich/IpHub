@@ -1,0 +1,192 @@
+@use "../config/functions" as *;
+@use "../config/mixins" as *;
+
+.purpose{
+    position: relative;
+    width: 100%;
+    &__bg{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100vw;
+        z-index: 1;
+        height: 100%;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #DA4533;
+            z-index: 1;
+        }
+        &-pic{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            z-index: 1;
+        }
+    }
+    &__content{
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 160px 0;
+        z-index: 2;
+        width: 100%;
+        flex-direction: column;
+        // @include m-desktop-small{
+        //     padding: 120px 0;
+        // }
+        // @include m-tablet{
+        //     padding: 80px 0;
+        // }
+        // @include m-phone{
+        //     padding: 60px 0;
+        // }
+    }
+    &__title{
+        margin-bottom: 16px;
+    }
+    &__subtitle{
+        margin-bottom: 50px;
+    }
+    &__swiper{
+        &-box{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px; 
+            width: 100%; 
+        }
+        &-contact-box{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+        }
+        &-contact-rowBox{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 20px; 
+            width: 100%; 
+            margin-bottom: 12px;
+        }
+        &-slide{
+            position: relative;
+            height: 460px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &-bar{
+            position: absolute;
+            z-index: 10;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 80px);
+            display: flex;
+            justify-content: space-between;
+        }
+        &-counter{
+            position: absolute;
+            top: 0px;
+            right: 40px;
+            z-index: 10;
+
+            color: white;
+            font-family: STIX Two Text;
+            font-size: 30px;
+            font-weight: 500;
+            line-height: 45px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+        }
+        &-item-title{
+            color: white;
+            font-family: Montserrat;
+            font-size: 24px;
+            font-weight: 500;
+            line-height: 38.4px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+            margin-bottom: 30px;
+        }
+        &-item-label{
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.05);
+
+            color: #F9F9F9;
+            font-family: Montserrat;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 25.6px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+
+            cursor: pointer;
+
+            &:hover{
+                background-color: #DA4533;
+            }
+        }
+    }
+    &__button{
+        cursor: pointer;
+    }
+}
+
+.label-radio {
+    visibility: hidden;
+    display: none;
+}
+
+.active-label{
+    background-color: #DA4533;
+}
+
+.contact-label{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.contact-subtitle{
+    margin-bottom: 12px;
+    display: block;
+}
+
+.text-input{
+    border: none;
+    color: black;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 25.6px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    cursor: pointer;
+    padding: 4px 12px;
+    
+}
+
+.total-slides{
+    color: #DA4533;
+}
+
+.hide{
+    display: none;
+}
+
+.text-area{
+    resize: none;
+}
